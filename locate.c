@@ -51,6 +51,7 @@ char *fill_path_dir(char *path)
 {
 	int i, length = 0;
 	char *path_copy, *pwd;
+
 	pwd = *(_getenv("PWD")) + 4;
 	for (i = 0; path[i]; i++)
 	{
@@ -104,6 +105,7 @@ list_t *get_path_dir(char *path)
 	int index;
 	char **dirs, *path_copy;
 	list_t *head = NULL;
+
 	path_copy = fill_path_dir(path);
 	if (!path_copy)
 		return (NULL);

@@ -107,7 +107,9 @@ int create_error(char **args, int err)
 		break;
 	}
 	write(STDERR_FILENO, error, _strlen(error));
-        if (error)
-  free(error);
+	if (error)
+	{
+		free(error);
+	}
 	return (err);
 }

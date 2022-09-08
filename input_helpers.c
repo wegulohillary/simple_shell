@@ -17,6 +17,7 @@ char *get_args(char *line, int *exe_ret)
 	size_t n = 0;
 	ssize_t read;
 	char *prompt = "$ ";
+
 	if (line)
 		free(line);
 	read = _getline(&line, &n, STDIN_FILENO);
@@ -45,6 +46,7 @@ char *get_args(char *line, int *exe_ret)
 int call_args(char **args, char **front, int *exe_ret)
 {
 	int ret, index;
+
 	if (!args[0])
 		return (*exe_ret);
 	for (index = 0; args[index]; index++)
@@ -102,6 +104,7 @@ int run_args(char **args, char **front, int *exe_ret)
 {
 	int ret, i;
 	int (*builtin)(char **args, char **front);
+
 	builtin = get_builtin(args[0]);
 	if (builtin)
 	{
@@ -131,6 +134,7 @@ int handle_args(int *exe_ret)
 {
 	int ret = 0, index;
 	char **args, *line = NULL, **front;
+
 	line = get_args(line, exe_ret);
 	if (!line)
 		return (END_OF_FILE);
@@ -172,6 +176,7 @@ int check_args(char **args)
 {
 	size_t i;
 	char *cur, *nex;
+
 	for (i = 0; args[i]; i++)
 	{
 		cur = args[i];

@@ -16,6 +16,7 @@ void handle_line(char **line, ssize_t read)
 	char previous, current, next;
 	size_t i, j;
 	ssize_t new_len;
+
 	new_len = get_new_len(*line);
 	if (new_len == read - 1)
 		return;

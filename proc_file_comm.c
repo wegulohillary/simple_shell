@@ -12,6 +12,7 @@ int cant_open(char *file_path)
 {
 	char *error, *hist_str;
 	int len;
+
 	hist_str = _itoa(hist);
 	if (!hist_str)
 		return (127);
@@ -51,6 +52,7 @@ int proc_file_commands(char *file_path, int *exe_ret)
 	char *line, **args, **front;
 	char buffer[120];
 	int ret;
+
 	hist = 0;
 	file = open(file_path, O_RDONLY);
 	if (file == -1)

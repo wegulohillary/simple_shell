@@ -11,6 +11,7 @@ void variable_replacement(char **args, int *exe_ret);
 void free_args(char **args, char **front)
 {
 	size_t i;
+
 	for (i = 0; args[i] || args[i + 1]; i++)
 		free(args[i]);
 	free(front);
@@ -95,6 +96,7 @@ void variable_replacement(char **line, int *exe_ret)
 {
 	int j, k = 0, len;
 	char *replacement = NULL, *old_line = NULL, *new_line;
+
 	old_line = *line;
 	for (j = 0; old_line[j]; j++)
 	{

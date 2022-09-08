@@ -16,6 +16,7 @@ alias_t *add_alias_end(alias_t **head, char *name, char *value)
 {
 	alias_t *new_node = malloc(sizeof(alias_t));
 	alias_t *last;
+
 	if (!new_node)
 		return (NULL);
 
@@ -51,6 +52,7 @@ list_t *add_node_end(list_t **head, char *dir)
 {
 	list_t *new_node = malloc(sizeof(list_t));
 	list_t *last;
+
 	if (!new_node)
 		return (NULL);
 	new_node->dir = dir;
@@ -75,6 +77,7 @@ list_t *add_node_end(list_t **head, char *dir)
 void free_alias_list(alias_t *head)
 {
 	alias_t *next;
+
 	while (head)
 	{
 		next = head->next;
@@ -91,6 +94,7 @@ void free_alias_list(alias_t *head)
 void free_list(list_t *head)
 {
 	list_t *next;
+
 	while (head)
 	{
 		next = head->next;

@@ -14,6 +14,7 @@ int _strncmp(const char *s1, const char *s2, size_t n);
 char *_strchr(char *s, char c)
 {
 	int index;
+
 	for (index = 0; s[index]; index++)
 	{
 		if (s[index] == c)
@@ -33,6 +34,7 @@ int _strspn(char *s, char *accept)
 {
 	int bytes = 0;
 	int index;
+
 	while (*s)
 	{
 		for (index = 0; accept[index]; index++)
@@ -80,6 +82,7 @@ int _strcmp(char *s1, char *s2)
 int _strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t i;
+
 	for (i = 0; s1[i] && s2[i] && i < n; i++)
 	{
 		if (s1[i] > s2[i])

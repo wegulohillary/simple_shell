@@ -17,6 +17,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	void *mem;
 	char *ptr_copy, *filler;
 	unsigned int index;
+
 	if (new_size == old_size)
 		return (ptr);
 	if (ptr == NULL)
@@ -92,6 +93,7 @@ ssize_t _getline(char **lineptr, size_t *n, FILE *stream)
 	ssize_t ret;
 	char c = 'x', *buffer;
 	int r;
+
 	if (input == 0)
 		fflush(stream);
 	else
